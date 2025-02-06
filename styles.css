@@ -1,7 +1,29 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
 table, table * {
     border: 2px solid black;
+    padding: .5rem;
+    
 }
 
 table {
     width: 60vw;
+    margin: 0 auto;
 }
+
+h1 {
+    text-align: center;
+}
+
+
