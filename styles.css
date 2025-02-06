@@ -1,0 +1,7 @@
+table, table * {
+    border: 2px solid black;
+}
+
+table {
+    width: 60vw;
+}
