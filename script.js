@@ -53,3 +53,9 @@ addBookToLibrary("Harry Potter and the Chamber of Secrets", "JK Rowling", 200, "
 for (book of books) {
     libraryTable.appendChild(book);
 }
+const addNewBookButton = document.querySelector(".add-book-button");
+const dialog = document.querySelector("dialog");
+
+addNewBookButton.addEventListener("click", () => {
+    dialog.showModal();
+})

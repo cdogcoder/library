@@ -31,4 +31,38 @@ h1 {
     padding: .5rem 2rem;
 }
 
+dialog {
+   padding: 24px;
+   top: 50%;
+   left: 50%;
+   translate: -50% -50%;
+}
+
+dialog p {
+    font-size: 1.5rem;
+}
+ 
+dialog form {
+   display: flex;
+   flex-direction: column;
+   gap: 16px;
+}
+ 
+ 
+dialog form div {
+   display: flex;
+   gap: 12px;
+   justify-content: flex-end;
+}
+
+dialog form div input {
+   width: 150px;
+}
+
+dialog form button {
+    align-self: center;
+    padding: 3px 24px;
+}
+ 
+ 
 
