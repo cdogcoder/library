@@ -44,7 +44,8 @@ const readStatusRadios = document.querySelectorAll("form input[type='radio']");
 const addBookEntryButton = document.querySelector("form button:last-child");
 const cancelBookEntryButton = document.querySelector("form button:first-child")
 
-addBookEntryButton.addEventListener("click", () => {
+addBookEntryButton.addEventListener("click", (event) => {
+    event.preventDefault();
     let radioCheckedValue = "";
     for (radio of readStatusRadios) {
         if (radio.checked && radio.id == "read") {
@@ -65,6 +66,7 @@ addBookEntryButton.addEventListener("click", () => {
     for (book of books) {
         libraryTable.appendChild(book);
     }
+    
 })
 
 cancelBookEntryButton.addEventListener("click", () => {
