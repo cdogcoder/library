@@ -44,12 +44,15 @@ const readStatusInput = document.querySelector("form input[id='read-status']");
 const addBookEntryButton = document.querySelector("form button");
 
 addBookEntryButton.addEventListener("click", () => {
-    addBookToLibrary(bookTitleInput.value, authorInput.value, pagesInput.value, readStatusInput.value);
+    if (bookTitleInput.value && authorInput.value && pagesInput.value && readStatusInput.value) {
+        addBookToLibrary(bookTitleInput.value, authorInput.value, pagesInput.value, readStatusInput.value);
+        bookTitleInput.value = "";
+        authorInput.value = "";
+        pagesInput.value = "";
+        readStatusInput.value = "";
+        dialog.close();
+    }
     for (book of books) {
         libraryTable.appendChild(book);
     }
-    bookTitleInput.value = ""
-    authorInput.value = ""
-    pagesInput.value = ""
-    readStatusInput.value = ""
 })
