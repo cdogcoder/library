@@ -55,8 +55,14 @@ dialog form div {
    justify-content: flex-end;
 }
 
-dialog form div input {
+dialog form div input[type="text"], dialog form div fieldset {
    width: 150px;
+}
+
+dialog form div fieldset {
+    border: none;
+    display: flex;
+    gap: 12px;
 }
 
 dialog form .form-buttons {
