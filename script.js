@@ -49,13 +49,24 @@ function addBookToLibrary(bookTitle, author, pages, readStatus) {
     
 }
 
-addBookToLibrary("Harry Potter and the Chamber of Secrets", "JK Rowling", 200, "Read")
-for (book of books) {
-    libraryTable.appendChild(book);
-}
+addBookToLibrary("Harry Potter and the Chamber of Secrets", "JK Rowling", 200, "Read");
+
 const addNewBookButton = document.querySelector(".add-book-button");
 const dialog = document.querySelector("dialog");
 
 addNewBookButton.addEventListener("click", () => {
     dialog.showModal();
+})
+
+const bookTitleInput = document.querySelector("form input[id='book-title']");
+const authorInput = document.querySelector("form input[id='author']");
+const pagesInput = document.querySelector("form input[id='pages']");
+const readStatusInput = document.querySelector("form input[id='read-status']");
+const addBookEntryButton = document.querySelector("form button");
+
+addBookEntryButton.addEventListener("click", () => {
+    addBookToLibrary(bookTitleInput.value, authorInput.value, pagesInput.value, readStatusInput.value);
+    for (book of books) {
+        libraryTable.appendChild(book);
+    }
 })
