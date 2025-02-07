@@ -26,4 +26,8 @@ h1 {
     text-align: center;
 }
 
+.add-book-button {
+    align-self: center;
+    padding: .5rem 2rem;
+}
 
