@@ -59,8 +59,13 @@ dialog form div input {
    width: 150px;
 }
 
-dialog form button {
-    align-self: center;
+dialog form .form-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+dialog form .form-buttons button {
     padding: 3px 24px;
 }
  
