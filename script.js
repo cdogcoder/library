@@ -40,17 +40,26 @@ addNewBookButton.addEventListener("click", () => {
 const bookTitleInput = document.querySelector("form input[id='book-title']");
 const authorInput = document.querySelector("form input[id='author']");
 const pagesInput = document.querySelector("form input[id='pages']");
-const readStatusInput = document.querySelector("form input[id='read-status']");
+const readStatusRadios = document.querySelectorAll("form input[type='radio']");
 const addBookEntryButton = document.querySelector("form button:last-child");
 const cancelBookEntryButton = document.querySelector("form button:first-child")
 
 addBookEntryButton.addEventListener("click", () => {
-    if (bookTitleInput.value && authorInput.value && pagesInput.value && readStatusInput.value) {
-        addBookToLibrary(bookTitleInput.value, authorInput.value, pagesInput.value, readStatusInput.value);
+    let radioCheckedValue = "";
+    for (radio of readStatusRadios) {
+        if (radio.checked && radio.id == "read") {
+            radioCheckedValue = "Read";
+        } 
+        else if (radio.checked && radio.id == "unread") {
+            radioCheckedValue = "Unread";
+        }
+    }
+    if (bookTitleInput.value && authorInput.value && pagesInput.value && radioCheckedValue) {
+        addBookToLibrary(bookTitleInput.value, authorInput.value, pagesInput.value, radioCheckedValue);
         bookTitleInput.value = "";
         authorInput.value = "";
         pagesInput.value = "";
-        readStatusInput.value = "";
+        readStatusRadios.forEach((radio) => radio.checked = false);
         dialog.close();
     }
     for (book of books) {
