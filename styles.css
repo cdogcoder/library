@@ -65,7 +65,8 @@ dialog form .form-buttons {
     align-items: center;
 }
 
-dialog form .form-buttons button {
+
+dialog form button {
     padding: 3px 24px;
 }
  

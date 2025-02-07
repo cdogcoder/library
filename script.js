@@ -41,7 +41,8 @@ const bookTitleInput = document.querySelector("form input[id='book-title']");
 const authorInput = document.querySelector("form input[id='author']");
 const pagesInput = document.querySelector("form input[id='pages']");
 const readStatusInput = document.querySelector("form input[id='read-status']");
-const addBookEntryButton = document.querySelector("form button");
+const addBookEntryButton = document.querySelector("form button:last-child");
+const cancelBookEntryButton = document.querySelector("form button:first-child")
 
 addBookEntryButton.addEventListener("click", () => {
     if (bookTitleInput.value && authorInput.value && pagesInput.value && readStatusInput.value) {
@@ -55,4 +56,8 @@ addBookEntryButton.addEventListener("click", () => {
     for (book of books) {
         libraryTable.appendChild(book);
     }
+})
+
+cancelBookEntryButton.addEventListener("click", () => {
+    dialog.close();
 })
