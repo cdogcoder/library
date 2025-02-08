@@ -11,16 +11,21 @@ body {
     gap: 2rem;
 }
 
-table, table * {
-    border: 2px solid black;
-    padding: .5rem;
-    
-}
-
 table {
     width: 60vw;
     margin: 0 auto;
+    border: 1px solid black;
+    border-radius: 4px;
 }
+
+table *:not(button) {
+    padding: .5rem;
+}
+
+table thead tr th, table tbody tr td {
+    border-bottom: 1px solid black;
+}
+
 
 h1 {
     text-align: center;
