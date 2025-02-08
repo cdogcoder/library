@@ -12,7 +12,6 @@ body {
 }
 
 table {
-    width: 60vw;
     margin: 0 auto;
     border: 1px solid black;
     border-radius: 4px;
@@ -26,7 +25,13 @@ table tbody tr:not(:last-child) td {
     border-bottom: 1px solid black;
 }
 
+table th {
+    width: 200px;
+}
 
+table td {
+    word-break: break-all;
+}
 
 h1 {
     text-align: center;
