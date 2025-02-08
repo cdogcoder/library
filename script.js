@@ -24,13 +24,19 @@ function addBookToLibrary(bookTitle, author, pages, readStatus) {
 
 function displayBookInLibraryTable(bookEntry) {
     const newBookTitle = document.createElement("td");
+    newBookTitle.className = "book-title";
     const newBookAuthor = document.createElement("td");
+    newBookAuthor.className = "author";
     const newBookPages = document.createElement("td");
+    newBookPages.className = "pages";
     const newBookReadStatus = document.createElement("td");
+    newBookReadStatus.className = "read-status";
     const readStatusToggleButtonContainer = document.createElement("td");
+    readStatusToggleButtonContainer.className = "read-status-toggle-button-container";
     const readStatusToggleButton = document.createElement("button");
     readStatusToggleButtonContainer.appendChild(readStatusToggleButton);
     const removeBookEntryButtonContainer = document.createElement("td");
+    removeBookEntryButtonContainer.className = "remove-book-entry-button-container";
     const removeBookEntryButton = document.createElement("button");
     removeBookEntryButtonContainer.appendChild(removeBookEntryButton);
 
@@ -101,10 +107,6 @@ addBookEntryButton.addEventListener("click", (event) => {
         readStatusRadios.forEach((radio) => radio.checked = false);
         dialog.close();
     }
-    // for (book of books) {
-    //     libraryTableLog.appendChild(book);
-    // }
-    
 })
 
 cancelBookEntryButton.addEventListener("click", () => {

@@ -25,13 +25,38 @@ table tbody tr:not(:last-child) td {
     border-bottom: 1px solid black;
 }
 
-table th {
-    width: 200px;
+table td {
+    text-align: center;
 }
 
-table td {
+table .book-title {
+    width: 300px;
     word-break: break-all;
-    text-align: center;
+}
+
+table .author {
+    width: 150px;
+    word-break: normal;
+}
+
+table .pages {
+    width: 50px;
+}
+
+table .read-status-span {
+    width: 275px;
+}
+
+table .read-status {
+    width: 75px;
+}
+
+table .read-status-toggle-button-container {
+    width: 125px;
+}
+
+table .remove-book-entry-button-container {
+    width: 75px;
 }
 
 h1 {
