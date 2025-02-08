@@ -19,7 +19,10 @@ function addBookToLibrary(bookTitle, author, pages, readStatus) {
     const newBookAuthor = document.createElement("td");
     const newBookPages = document.createElement("td");
     const newBookReadStatus = document.createElement("td");
-    removeBookEntryButtonContainer = document.createElement("td");
+    const readStatusToggleButtonContainer = document.createElement("td");
+    const readStatusToggleButton = document.createElement("button");
+    readStatusToggleButtonContainer.appendChild(readStatusToggleButton);
+    const removeBookEntryButtonContainer = document.createElement("td");
     const removeBookEntryButton = document.createElement("button");
     removeBookEntryButtonContainer.appendChild(removeBookEntryButton);
 
@@ -27,6 +30,7 @@ function addBookToLibrary(bookTitle, author, pages, readStatus) {
     newBookAuthor.textContent = bookEntry.author;
     newBookPages.textContent = bookEntry.pages;
     newBookReadStatus.textContent = bookEntry.readStatus;
+    readStatusToggleButton.textContent = readStatus == "Read" ? "Toggle Unread" : "Toggle Read";
     removeBookEntryButton.textContent = "Remove";
 
     const newBookLog = document.createElement("tr");
@@ -44,6 +48,7 @@ function addBookToLibrary(bookTitle, author, pages, readStatus) {
     newBookLog.appendChild(newBookAuthor);
     newBookLog.appendChild(newBookPages);
     newBookLog.appendChild(newBookReadStatus);
+    newBookLog.appendChild(readStatusToggleButtonContainer);
     newBookLog.appendChild(removeBookEntryButtonContainer);
     books.push(newBookLog);
     
