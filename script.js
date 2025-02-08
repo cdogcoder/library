@@ -15,6 +15,11 @@ function addBookToLibrary(bookTitle, author, pages, readStatus) {
     })
     const bookEntry = new Book(bookTitle, author, pages, readStatus);
     
+    books.push(bookEntry);
+    displayBookInLibraryTable(bookEntry)
+}
+
+function displayBookInLibraryTable(bookEntry) {
     const newBookTitle = document.createElement("td");
     const newBookAuthor = document.createElement("td");
     const newBookPages = document.createElement("td");
@@ -30,7 +35,7 @@ function addBookToLibrary(bookTitle, author, pages, readStatus) {
     newBookAuthor.textContent = bookEntry.author;
     newBookPages.textContent = bookEntry.pages;
     newBookReadStatus.textContent = bookEntry.readStatus;
-    readStatusToggleButton.textContent = readStatus == "Read" ? "Toggle Unread" : "Toggle Read";
+    readStatusToggleButton.textContent = bookEntry.readStatus == "Read" ? "Toggle Unread" : "Toggle Read";
     removeBookEntryButton.textContent = "Remove";
 
     const newBookLog = document.createElement("tr");
@@ -50,8 +55,8 @@ function addBookToLibrary(bookTitle, author, pages, readStatus) {
     newBookLog.appendChild(newBookReadStatus);
     newBookLog.appendChild(readStatusToggleButtonContainer);
     newBookLog.appendChild(removeBookEntryButtonContainer);
-    books.push(newBookLog);
     
+    libraryTableLog.appendChild(newBookLog);
 }
 
 const addNewBookButton = document.querySelector(".add-book-button");
@@ -87,9 +92,9 @@ addBookEntryButton.addEventListener("click", (event) => {
         readStatusRadios.forEach((radio) => radio.checked = false);
         dialog.close();
     }
-    for (book of books) {
-        libraryTableLog.appendChild(book);
-    }
+    // for (book of books) {
+    //     libraryTableLog.appendChild(book);
+    // }
     
 })
 
