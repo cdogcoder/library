@@ -15,7 +15,9 @@ function addBookToLibrary(bookTitle, author, pages, readStatus) {
     const newBookAuthor = document.createElement("td");
     const newBookPages = document.createElement("td");
     const newBookReadStatus = document.createElement("td");
+    removeBookEntryButtonContainer = document.createElement("td");
     const removeBookEntryButton = document.createElement("button");
+    removeBookEntryButtonContainer.appendChild(removeBookEntryButton);
 
     newBookTitle.textContent = bookEntry.bookTitle;
     newBookAuthor.textContent = bookEntry.author;
@@ -34,7 +36,7 @@ function addBookToLibrary(bookTitle, author, pages, readStatus) {
     newBookLog.appendChild(newBookAuthor);
     newBookLog.appendChild(newBookPages);
     newBookLog.appendChild(newBookReadStatus);
-    newBookLog.appendChild(removeBookEntryButton);
+    newBookLog.appendChild(removeBookEntryButtonContainer);
     books.push(newBookLog);
     
 }
