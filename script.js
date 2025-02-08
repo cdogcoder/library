@@ -49,14 +49,14 @@ function displayBookInLibraryTable(bookEntry) {
         books.forEach((book) => displayBookInLibraryTable(book));
     })
     removeBookEntryButton.addEventListener("click", () => {
-        books.splice(books.indexOf(newBookLog), 1);
+        books.splice(books.indexOf(bookEntry), 1);
         if (books.length == 0) {
             libraryTableHeaderCells.forEach((cell) => {
                 cell.style.cssText = "";
             })
         }
         libraryTableLog.innerHTML = "";
-        books.forEach((book) => libraryTableLog.appendChild(book));
+        books.forEach((book) => displayBookInLibraryTable(book));
     })
     newBookLog.appendChild(newBookTitle);
     newBookLog.appendChild(newBookAuthor);
