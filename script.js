@@ -7,6 +7,9 @@ function Book(bookTitle, author, pages, readStatus) {
     this.author = author;
     this.pages = pages;
     this.readStatus = readStatus;
+    this.changeReadStatus = function (currentReadStatus) {
+        this.readStatus = currentReadStatus == "Read" ? "Unread" : "Read";
+    }
 }
 
 function addBookToLibrary(bookTitle, author, pages, readStatus) {
@@ -39,6 +42,12 @@ function displayBookInLibraryTable(bookEntry) {
     removeBookEntryButton.textContent = "Remove";
 
     const newBookLog = document.createElement("tr");
+    readStatusToggleButton.addEventListener("click", () => {
+        bookEntry.changeReadStatus(bookEntry.readStatus);
+        readStatusToggleButton.textContent = bookEntry.readStatus == "Read" ? "Toggle Unread" : "Toggle Read";
+        libraryTableLog.innerHTML = "";
+        books.forEach((book) => displayBookInLibraryTable(book));
+    })
     removeBookEntryButton.addEventListener("click", () => {
         books.splice(books.indexOf(newBookLog), 1);
         if (books.length == 0) {
