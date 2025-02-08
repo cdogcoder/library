@@ -22,9 +22,10 @@ table *:not(button) {
     padding: .5rem;
 }
 
-table thead tr th, table tbody tr td {
+table tbody tr:not(:last-child) td {
     border-bottom: 1px solid black;
 }
+
 
 
 h1 {
