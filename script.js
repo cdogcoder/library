@@ -70,7 +70,21 @@ function displayBookInLibraryTable(bookEntry) {
     newBookLog.appendChild(newBookReadStatus);
     newBookLog.appendChild(readStatusToggleButtonContainer);
     newBookLog.appendChild(removeBookEntryButtonContainer);
-    
+    newBookLog.childNodes.forEach(
+        (cell) => {
+        cell.addEventListener("mouseover", () => {
+            for (node of newBookLog.childNodes) {
+                node.style.cssText = "background-color: yellow;";
+            }
+        })
+        cell.addEventListener("mouseout", () => {
+            for (node of newBookLog.childNodes) {
+                node.style.cssText = "background-color: white;";
+            }
+        })
+        }
+    )
+
     libraryTableLog.appendChild(newBookLog);
 }
 
