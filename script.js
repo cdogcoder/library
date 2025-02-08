@@ -1,4 +1,4 @@
-const libraryTable = document.querySelector("table");
+const libraryTableLog = document.querySelector("tbody");
 const books = [];
 
 function Book(bookTitle, author, pages, readStatus) {
@@ -24,6 +24,11 @@ function addBookToLibrary(bookTitle, author, pages, readStatus) {
     removeBookEntryButton.textContent = "Remove";
 
     const newBookLog = document.createElement("tr");
+    removeBookEntryButton.addEventListener("click", () => {
+        books.splice(books.indexOf(newBookLog, 1));
+        libraryTableLog.innerHTML = "";
+        books.forEach((book) => libraryTableLog.appendChild(book));
+    })
     newBookLog.appendChild(newBookTitle);
     newBookLog.appendChild(newBookAuthor);
     newBookLog.appendChild(newBookPages);
@@ -67,7 +72,7 @@ addBookEntryButton.addEventListener("click", (event) => {
         dialog.close();
     }
     for (book of books) {
-        libraryTable.appendChild(book);
+        libraryTableLog.appendChild(book);
     }
     
 })
