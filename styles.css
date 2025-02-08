@@ -11,6 +11,10 @@ body {
     gap: 2rem;
 }
 
+button {
+    padding: .25rem .5rem;
+}
+
 table {
     margin: 0 auto;
     border: 1px solid black;
@@ -114,4 +118,3 @@ dialog form button {
 }
  
  
-
