@@ -1,3 +1,4 @@
+const libraryTableHeaderCells = document.querySelectorAll("thead tr th");
 const libraryTableLog = document.querySelector("tbody");
 const books = [];
 
@@ -9,6 +10,9 @@ function Book(bookTitle, author, pages, readStatus) {
 }
 
 function addBookToLibrary(bookTitle, author, pages, readStatus) {
+    libraryTableHeaderCells.forEach((cell) => {
+        cell.style.cssText = "border-bottom: 1px solid black;"
+    })
     const bookEntry = new Book(bookTitle, author, pages, readStatus);
     
     const newBookTitle = document.createElement("td");
@@ -28,7 +32,11 @@ function addBookToLibrary(bookTitle, author, pages, readStatus) {
     const newBookLog = document.createElement("tr");
     removeBookEntryButton.addEventListener("click", () => {
         books.splice(books.indexOf(newBookLog), 1);
-        console.log(books);
+        if (books.length == 0) {
+            libraryTableHeaderCells.forEach((cell) => {
+                cell.style.cssText = "";
+            })
+        }
         libraryTableLog.innerHTML = "";
         books.forEach((book) => libraryTableLog.appendChild(book));
     })
