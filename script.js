@@ -25,7 +25,8 @@ function addBookToLibrary(bookTitle, author, pages, readStatus) {
 
     const newBookLog = document.createElement("tr");
     removeBookEntryButton.addEventListener("click", () => {
-        books.splice(books.indexOf(newBookLog, 1));
+        books.splice(books.indexOf(newBookLog), 1);
+        console.log(books);
         libraryTableLog.innerHTML = "";
         books.forEach((book) => libraryTableLog.appendChild(book));
     })
